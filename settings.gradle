@@ -1,0 +1,2 @@
+include ':asm_example'
+rootProject.name = "asm_module"
