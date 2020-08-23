@@ -17,4 +17,6 @@ ASM 4 教程中的示例代码
 - [2.3.2 TraceClassVisitor](asm_example/src/main/java/com/andoter/asm_example/part2/TraceClassVisitorDemo.kt)
 - [2.3.3 CheckClassAdapter](asm_example/src/main/java/com/andoter/asm_example/part2/CheckClassAdapterDemo.kt)
 
-### [第 3 章]()
+### [第 3 章](MethodVisitor)
+- [3.1.3 字节码指令](asm_example/src/main/java/com/andoter/asm_example/part3/字节码指令)
+- [3.2.1 MethodVisitor](asm_example/src/main/java/com/andoter/asm_example/part3/MethodPrint.kt)
