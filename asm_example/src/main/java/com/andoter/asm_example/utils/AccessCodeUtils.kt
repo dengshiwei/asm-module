@@ -8,7 +8,7 @@ import org.objectweb.asm.Opcodes
 object AccessCodeUtils {
     private const val ACCESS_PREFIX = "ACC_"
     private val mapAccess = mutableMapOf<Int, String>()
-
+    private val mapOpcodes = mutableMapOf<String, Int>()
     /**
      * 修饰符
      */
@@ -27,6 +27,22 @@ object AccessCodeUtils {
     }
 
     /**
+     * 转换其它操作 Opcode
+     */
+    fun opcode2String(code: Int):String {
+        if (mapOpcodes.isEmpty()) {
+            accCodeMap()
+        }
+
+        for (op in mapOpcodes) {
+            if (op.value == code) {
+                return op.key
+            }
+        }
+        return ""
+    }
+
+    /**
      * 生成 ACC_ 操作符集合
      */
     private fun accCodeMap() {
@@ -35,6 +51,8 @@ object AccessCodeUtils {
             for (field in fields) {
                 if (field.name.startsWith(ACCESS_PREFIX)) {
                     mapAccess[field.getInt(null)] = field.name
+                } else if (field.type == Int::class.java){
+                    mapOpcodes[field.name] = field.getInt(null)
                 }
             }
         }

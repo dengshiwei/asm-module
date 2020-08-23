@@ -5,6 +5,7 @@ ASM 4 教程中的示例代码
 
 ### [第 2 章](asm_example/src/main/java/com/andoter/asm_example/part2)
 #### 2.2 接口与组件
+- [2.2.1 ClassReader 读取](asm_example/src/main/java/com/andoter/asm_example/part2/ClassReaderDemo.kt)
 - [2.2.2 ClassVisitor 分析类](asm_example/src/main/java/com/andoter/asm_example/part2/ClassPrintVisitor.kt)
 - [2.2.3 ClassWriter 生成类](asm_example/src/main/java/com/andoter/asm_example/part2/ClassWriteDemo.kt)
 - [2.2.4 转换类](asm_example/src/main/java/com/andoter/asm_example/part2/ConvertDemo.kt)

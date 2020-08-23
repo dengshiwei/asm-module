@@ -38,7 +38,7 @@ fun main() {
         }
     }
 
-    classReader.accept(classVisitor, ClassReader.SKIP_CODE)
+    classReader.accept(classVisitor, ClassReader.SKIP_DEBUG)
 }
 
 /**
@@ -49,12 +49,35 @@ fun main() {
  *  MethodVisitor 对象调用响应的方法。
  *  - ClassWriter 的 visitMethod 方法返回 MethodVisitor 接口的一个实现，它直接以二进制形式生成已编译方法
  *  - MethodVisitor类将它接收到的所有方法调用委托给另一个MethodVisitor方法。可以将它看作一个事件筛选器。
+ *
+ *  MethodVisitor 回调方法有：
+ *  - visitParameter：访问方法一个参数
+ *  - visitAnnotationDefualt：访问注解接口方法的默认值
+ *  - visitAnnotaion：访问方法的一个注解
+ *  - visitTypeAnnotation：访问方法签名上的一个类型的注解
+ *  - visitAnnotableParameterCount：访问注解参数数量，就是访问方法参数有注解参数个数
+ *  - visitParameterAnnotation：访问参数的注解，返回一个 AnnotationVisitor 可以访问该注解值
+ *  - visitAttribute：访问方法的属性
+ *  - visitCode：开始访问方法代码，此处可以添加方法运行前拦截器
+ *  - visitFrame：访问方法局部变量的当前状态以及操作栈成员信息
+ *  - visitIntInsn：访问数值类型指令
+ *  - visitVarInsn：访问本地变量类型指令
+ *  - visitTypeInsn：访问类型指令，类型指令会把类的内部名称当成参数 Type
+ *  - visitFieldInsn：域操作指令，用来加载或者存储对象的 Field
+ *  - visitMethodInsn：访问方法操作指令
+ *  - visitDynamicInsn：访问动态类型指令
+ *  - visitJumpInsn：访问比较跳转指令
+ *  - visitLabelInsn：访问 label，当会在调用该方法后访问该label标记一个指令
+ *  - visitLdcInsn：访问 LDC 指令，也就是访问常量池索引
+ *  - visitLineNumber：访问行号描述
+ *  - visitMaxs：访问操作数栈最大值和本地变量表最大值
+ *  - visitLocalVariable：访问本地变量描述
  */
 class MethodPrint(api: Int, methodVisitor: MethodVisitor?) : MethodVisitor(api, methodVisitor) {
 
     override fun visitMultiANewArrayInsn(descriptor: String?, numDimensions: Int) {
         super.visitMultiANewArrayInsn(descriptor, numDimensions)
-        ADLog.info("descriptor = $descriptor, numDimensions = $numDimensions")
+        ADLog.info("visitMultiANewArrayInsn, descriptor = $descriptor, numDimensions = $numDimensions")
     }
 
     override fun visitFrame(
@@ -65,12 +88,12 @@ class MethodPrint(api: Int, methodVisitor: MethodVisitor?) : MethodVisitor(api, 
         stack: Array<out Any>?
     ) {
         super.visitFrame(type, numLocal, local, numStack, stack)
-        ADLog.info("type = $type, numLocal = $numLocal, local.size = $(local.size), numStack = $numStack")
+        ADLog.info("visitFrame, type = $type, numLocal = $numLocal, local.size = $(local.size), numStack = $numStack")
     }
 
     override fun visitVarInsn(opcode: Int, `var`: Int) {
         super.visitVarInsn(opcode, `var`)
-        ADLog.info("opcode = $opcode, var = $`var`")
+        ADLog.info("visitVarInsn, opcode = ${AccessCodeUtils.opcode2String(opcode)}, var = $`var`")
     }
 
     override fun visitTryCatchBlock(start: Label?, end: Label?, handler: Label?, type: String?) {
@@ -85,7 +108,7 @@ class MethodPrint(api: Int, methodVisitor: MethodVisitor?) : MethodVisitor(api, 
 
     override fun visitJumpInsn(opcode: Int, label: Label?) {
         super.visitJumpInsn(opcode, label)
-        ADLog.info("visitJumpInsn, opcode = $opcode")
+        ADLog.info("visitJumpInsn, opcode = ${AccessCodeUtils.opcode2String(opcode)}")
     }
 
     override fun visitLdcInsn(value: Any?) {
@@ -99,12 +122,12 @@ class MethodPrint(api: Int, methodVisitor: MethodVisitor?) : MethodVisitor(api, 
 
     override fun visitIntInsn(opcode: Int, operand: Int) {
         super.visitIntInsn(opcode, operand)
-        ADLog.info("visitIntInsn, opcode = $opcode, operand = $operand")
+        ADLog.info("visitIntInsn, opcode = ${AccessCodeUtils.opcode2String(opcode)}, operand = $operand")
     }
 
     override fun visitTypeInsn(opcode: Int, type: String?) {
         super.visitTypeInsn(opcode, type)
-        ADLog.info("visitTypeInsn, opcode = $opcode, type = $type")
+        ADLog.info("visitTypeInsn, opcode = ${AccessCodeUtils.opcode2String(opcode)}, type = $type")
     }
 
     override fun visitAnnotationDefault(): AnnotationVisitor? {
@@ -163,7 +186,7 @@ class MethodPrint(api: Int, methodVisitor: MethodVisitor?) : MethodVisitor(api, 
 
     override fun visitMethodInsn(opcode: Int, owner: String?, name: String?, descriptor: String?) {
         super.visitMethodInsn(opcode, owner, name, descriptor)
-        ADLog.info("visitMethodInsn, opcode = $opcode, owner = $owner, name = $name, descriptor = $descriptor")
+        ADLog.info("visitMethodInsn, opcode = ${AccessCodeUtils.opcode2String(opcode)}, owner = $owner, name = $name, descriptor = $descriptor")
     }
 
     override fun visitMethodInsn(
@@ -174,12 +197,12 @@ class MethodPrint(api: Int, methodVisitor: MethodVisitor?) : MethodVisitor(api, 
         isInterface: Boolean
     ) {
         super.visitMethodInsn(opcode, owner, name, descriptor, isInterface)
-        ADLog.info("visitMethodInsn, opcode = $opcode, owner = $owner, name = $name, descriptor = $descriptor")
+        ADLog.info("visitMethodInsn, opcode = ${AccessCodeUtils.opcode2String(opcode)}, owner = $owner, name = $name, descriptor = $descriptor")
     }
 
     override fun visitInsn(opcode: Int) {
         super.visitInsn(opcode)
-        ADLog.info("visitInsn")
+        ADLog.info("visitInsn, opcode = ${AccessCodeUtils.opcode2String(opcode)}")
     }
 
     override fun visitInsnAnnotation(
@@ -270,7 +293,7 @@ class MethodPrint(api: Int, methodVisitor: MethodVisitor?) : MethodVisitor(api, 
 
     override fun visitFieldInsn(opcode: Int, owner: String?, name: String?, descriptor: String?) {
         super.visitFieldInsn(opcode, owner, name, descriptor)
-        ADLog.info("opcode = $opcode, owner = $owner, name = $name, descriptor = $descriptor")
+        ADLog.info("visitFieldInsn, opcode = ${AccessCodeUtils.opcode2String(opcode)}, owner = $owner, name = $name, descriptor = $descriptor")
     }
 
     override fun visitCode() {
