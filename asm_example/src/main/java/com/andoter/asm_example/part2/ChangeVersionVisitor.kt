@@ -1,7 +1,7 @@
 package com.andoter.asm_example.part2
 
 import com.andoter.asm_example.utils.AccessCodeUtils
-import com.andoter.asm_example.utils.SALog
+import com.andoter.asm_example.utils.ADLog
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.ClassWriter
 import org.objectweb.asm.MethodVisitor
@@ -15,7 +15,7 @@ class ChangeVersionVisitor(p0: Int) : ClassVisitor(p0) {
     }
 
     override fun visitMethod(access: Int, name: String?, descriptor: String?, signature: String?, exceptions: Array<out String>?): MethodVisitor? {
-        SALog.info("[visitMethod],access = ${AccessCodeUtils.accCode2String(access)},"+
+        ADLog.info("[visitMethod],access = ${AccessCodeUtils.accCode2String(access)},"+
                 "name = ${name},descriptor=${descriptor},signature=${signature}"
         )
         return classWriter.visitMethod(access, name, descriptor, signature, exceptions)
@@ -23,12 +23,12 @@ class ChangeVersionVisitor(p0: Int) : ClassVisitor(p0) {
 
     override fun visit(version: Int, access: Int, name: String?, signature: String?, superName: String?, interfaces: Array<out String>?) {
         startTime = System.nanoTime()
-        SALog.info("[visit],version = ${version},access=${AccessCodeUtils.accCode2String(access)},name=${name}")
+        ADLog.info("[visit],version = ${version},access=${AccessCodeUtils.accCode2String(access)},name=${name}")
         classWriter.visit(52, access, name, signature, superName, interfaces)
     }
 
     override fun visitEnd() {
         super.visitEnd()
-        SALog.info("[visitEnd], time = ${System.nanoTime() - startTime}")
+        ADLog.info("[visitEnd], time = ${System.nanoTime() - startTime}")
     }
 }

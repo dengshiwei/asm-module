@@ -1,7 +1,7 @@
 package com.andoter.asm_example.utils
 
-object SALog {
-
+object ADLog {
+    private const val TAG = "Andoter"
     var debug = false
 
     /**
@@ -9,7 +9,7 @@ object SALog {
      */
     fun error(errorMessage: String) {
         try {
-            println("${LogUI.ERROR.value}[SensorsAnalytics]:$errorMessage${LogUI.END.value}")
+            println("${LogUI.ERROR.value}[$TAG]:$errorMessage${LogUI.END.value}")
         } catch (ex: Exception) {
             ex.printStackTrace()
         }
@@ -20,7 +20,7 @@ object SALog {
      */
     fun info(info: String) {
         try {
-            println("${LogUI.INFO.value}[SensorsAnalytics]:$info${LogUI.END.value}")
+            println("${LogUI.INFO.value}[$TAG]:$info${LogUI.END.value}")
         } catch (ex: Exception) {
             ex.printStackTrace()
         }
