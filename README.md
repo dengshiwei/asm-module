@@ -25,3 +25,4 @@ ASM 4 教程中的示例代码
 - [3.2.1 MethodVisitor](asm_example/src/main/java/com/andoter/asm_example/part3/MethodPrint.kt)
 - [3.2.2 生成方法](asm_example/src/main/java/com/andoter/asm_example/part3/GenerateMethod.kt)
 - [3.2.2 无状态转换](asm_example/src/main/java/com/andoter/asm_example/part3/AddTimerAdapter.kt)
+- [3.2.2 有状态转换](asm_example/src/main/java/com/andoter/asm_example/part3/RemoveAddZeroAdapter.kt)
