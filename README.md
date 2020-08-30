@@ -31,3 +31,4 @@ ASM 4 教程中的示例代码
 - 3.3.1 基本工具
     - [1. Type](asm_example/src/main/java/com/andoter/asm_example/part3/TypeDemo.kt)
     - [2. TraceMethodVisitor](asm_example/src/main/java/com/andoter/asm_example/part3/TraceMethodVisitorDemo.kt)
+    - [3. CheckMethodAdapter](asm_example/src/main/java/com/andoter/asm_example/part3/CheckMethodDemo.kt)
