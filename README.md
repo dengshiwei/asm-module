@@ -33,3 +33,4 @@ ASM 4 教程中的示例代码
     - [2. TraceMethodVisitor](asm_example/src/main/java/com/andoter/asm_example/part3/TraceMethodVisitorDemo.kt)
     - 3. AnalyzerAdapter
         - [AddTimerMethodAdapter2](asm_example/src/main/java/com/andoter/asm_example/part3/AddTimerAdapter2.kt)
+        - [AddTimerMethodAdapter3](asm_example/src/main/java/com/andoter/asm_example/part3/AddTimerAdapter3.kt)
