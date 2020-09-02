@@ -37,3 +37,4 @@ ASM 4 教程中的示例代码
     - 4. LocalVariablesSorter
         - [AddTimerMethodAdapter4](asm_example/src/main/java/com/andoter/asm_example/part3/AddTimerAdapter4.kt)
         - [AddTimerMethodAdapter5](asm_example/src/main/java/com/andoter/asm_example/part3/AddTimerAdapter5.kt)
+    - [5. AdviceAdapter](asm_example/src/main/java/com/andoter/asm_example/part3/AddTimerAdapter6.kt)
