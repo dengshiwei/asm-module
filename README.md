@@ -38,3 +38,11 @@ ASM 4 教程中的示例代码
     - [AddTimerMethodAdapter4](asm_example/src/main/java/com/andoter/asm_example/part3/AddTimerAdapter4.kt)
     - [AddTimerMethodAdapter5](asm_example/src/main/java/com/andoter/asm_example/part3/AddTimerAdapter5.kt)
 - [3.3.4. AdviceAdapter](asm_example/src/main/java/com/andoter/asm_example/part3/AddTimerAdapter6.kt)
+
+### [第 4 章](asm_example/src/main/java/com/andoter/asm_example/part4)
+#### 4.1 泛型
+- [4.1.2 接口与组件 SinatureVisitor](asm_example/src/main/java/com/andoter/asm_example/part4/SignatureGeneric.kt)
+
+#### 4.2 注解
+- 4.2.2 接口与组件
+    - [删除注解 RemoveAnnotationAdapter](asm_example/src/main/java/com/andoter/asm_example/part4/AnnotationDemo.kt)
