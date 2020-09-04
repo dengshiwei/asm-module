@@ -45,4 +45,5 @@ ASM 4 教程中的示例代码
 
 #### 4.2 注解
 - 4.2.2 接口与组件
+    - [AnnotationVisitor 基础](asm_example/src/main/java/com/andoter/asm_example/part4/AnnotationPrinter.kt)
     - [删除注解 RemoveAnnotationAdapter](asm_example/src/main/java/com/andoter/asm_example/part4/AnnotationDemo.kt)
