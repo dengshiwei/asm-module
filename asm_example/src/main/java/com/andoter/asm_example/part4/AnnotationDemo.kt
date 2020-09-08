@@ -1,6 +1,6 @@
 package com.andoter.asm_example.part4
 
-import com.andoter.asm_example.ClassOutputUtil
+import com.andoter.asm_example.utils.ClassOutputUtil
 import com.andoter.asm_example.utils.ADLog
 import org.objectweb.asm.*
 

@@ -1,6 +1,5 @@
 package com.andoter.asm_example.part2
 
-import com.andoter.asm_example.MyModuleVisitor
 import com.andoter.asm_example.utils.AccessCodeUtils
 import com.andoter.asm_example.utils.ADLog
 import org.objectweb.asm.*

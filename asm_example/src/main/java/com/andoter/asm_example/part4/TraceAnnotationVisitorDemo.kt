@@ -1,11 +1,9 @@
 package com.andoter.asm_example.part4
 
-import com.andoter.asm_example.ClassOutputUtil
 import org.objectweb.asm.ClassWriter
 import org.objectweb.asm.Opcodes
 import org.objectweb.asm.util.Textifier
 import org.objectweb.asm.util.TraceAnnotationVisitor
-import java.io.PrintWriter
 
 class TraceAnnotationVisitorDemo {
 }

@@ -1,4 +1,4 @@
-package com.andoter.asm_example
+package com.andoter.asm_example.utils
 
 import java.io.*
 

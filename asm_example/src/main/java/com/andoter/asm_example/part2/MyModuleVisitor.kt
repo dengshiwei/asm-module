@@ -1,4 +1,4 @@
-package com.andoter.asm_example
+package com.andoter.asm_example.part2
 
 import com.andoter.asm_example.utils.ADLog
 import org.objectweb.asm.ModuleVisitor

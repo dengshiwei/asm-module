@@ -1,6 +1,6 @@
 package com.andoter.asm_example.part3
 
-import com.andoter.asm_example.ClassOutputUtil
+import com.andoter.asm_example.utils.ClassOutputUtil
 import org.objectweb.asm.ClassWriter
 import org.objectweb.asm.Opcodes
 import org.objectweb.asm.util.TraceClassVisitor
