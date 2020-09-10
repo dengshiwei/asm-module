@@ -53,3 +53,6 @@ ASM 4 教程中的示例代码
     - [创建注解类 DeprecatedDump](asm_example/src/main/java/com/andoter/asm_example/part4/DeprecatedDump.kt)
     - [TraceAnnotationVisitor](asm_example/src/main/java/com/andoter/asm_example/part4/TraceAnnotationVisitorDemo.kt)
     - [CheckAnnotationAdapter](asm_example/src/main/java/com/andoter/asm_example/part4/CheckAnnotationAdapterDemo.kt)
+    
+### [第 5 章]
+- [向后兼容/向下兼容](asm_example/src/main/java/com/andoter/asm_example/part5/向后兼容)
