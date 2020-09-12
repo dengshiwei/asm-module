@@ -54,5 +54,11 @@ ASM 4 教程中的示例代码
     - [TraceAnnotationVisitor](asm_example/src/main/java/com/andoter/asm_example/part4/TraceAnnotationVisitorDemo.kt)
     - [CheckAnnotationAdapter](asm_example/src/main/java/com/andoter/asm_example/part4/CheckAnnotationAdapterDemo.kt)
     
-### [第 5 章]
+### [第 5 章](asm_example/src/main/java/com/andoter/asm_example/part5)
 - [向后兼容/向下兼容](asm_example/src/main/java/com/andoter/asm_example/part5/向后兼容)
+
+### [第 6 章](asm_example/src/main/java/com/andoter/asm_example/part6)
+- 6.1 接口组件介绍
+    - [6.1.1 基本介绍](asm_example/src/main/java/com/andoter/asm_example/part6/TreeAPI.kt)
+    - [6.1.2 生成类](asm_example/src/main/java/com/andoter/asm_example/part6/CreateClass.kt)
+    - [6.1.3 添加删除类成员](asm_example/src/main/java/com/andoter/asm_example/part6/RemoveMethodDemo.kt)
