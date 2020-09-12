@@ -61,4 +61,10 @@ ASM 4 教程中的示例代码
 - 6.1 接口组件介绍
     - [6.1.1 基本介绍](asm_example/src/main/java/com/andoter/asm_example/part6/TreeAPI.kt)
     - [6.1.2 生成类](asm_example/src/main/java/com/andoter/asm_example/part6/CreateClass.kt)
-    - [6.1.3 添加删除类成员](asm_example/src/main/java/com/andoter/asm_example/part6/RemoveMethodDemo.kt)
+    - 6.1.3 添加删除类成员
+        - [删除类成员](asm_example/src/main/java/com/andoter/asm_example/part6/RemoveMethodDemo.kt)
+        - [添加类成员](asm_example/src/main/java/com/andoter/asm_example/part6/AddFieldDemo.kt)
+- 6.2 组件合成
+    - [6.2.1 基本介绍](asm_example/src/main/java/com/andoter/asm_example/part6/TreeAPI.kt)
+    - [6.2.2 模式](asm_example/src/main/java/com/andoter/asm_example/part6/PatternDemo.kt)
+    

@@ -28,10 +28,12 @@ class TreeAPI {
 }
 
 fun main() {
+    // ClassNode 与 ClassReader 的结合转换
     val classNode = ClassNode()
     val classReader = ClassReader("")
     classReader.accept(classNode, ClassReader.SKIP_DEBUG)
 
+    // ClassNode 与 ClassWriter 的结合
     val classNode1 = ClassNode()
     val classWriter = ClassWriter(ClassWriter.COMPUTE_MAXS)
     classNode1.accept(classWriter)
