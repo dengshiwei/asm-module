@@ -68,3 +68,10 @@ ASM 4 教程中的示例代码
     - [6.2.1 基本介绍](asm_example/src/main/java/com/andoter/asm_example/part6/TreeAPI.kt)
     - [6.2.2 模式](asm_example/src/main/java/com/andoter/asm_example/part6/PatternDemo.kt)
     
+### [第 7 章](asm_example/src/main/java/com/andoter/asm_example/part7)
+- 7.1 接口与组件
+    - [7.1.1 介绍](asm_example/src/main/java/com/andoter/asm_example/part7/MethodNodeAPI.kt)
+    - [7.1.2 生成方法](asm_example/src/main/java/com/andoter/asm_example/part7/MakeMethod.kt)
+    - 7.1.3 无状态转换和有状态转换
+        - [AddTimerTransformer](asm_example/src/main/java/com/andoter/asm_example/part7/AddTimerTransformer.kt)
+    
