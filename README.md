@@ -24,8 +24,9 @@ ASM 4 教程中的示例代码
 #### 3.2 接口与组件
 - [3.2.1 MethodVisitor](asm_example/src/main/java/com/andoter/asm_example/part3/MethodPrint.kt)
 - [3.2.2 生成方法](asm_example/src/main/java/com/andoter/asm_example/part3/GenerateMethod.kt)
-- [3.2.2 无状态转换](asm_example/src/main/java/com/andoter/asm_example/part3/AddTimerAdapter.kt)
-- [3.2.2 有状态转换](asm_example/src/main/java/com/andoter/asm_example/part3/RemoveAddZeroAdapter.kt)
+- [3.2.3 转换方法](asm_example/src/main/java/com/andoter/asm_example/part3/RemoveNopAdapter.kt)
+- [3.2.4 无状态转换](asm_example/src/main/java/com/andoter/asm_example/part3/AddTimerAdapter.kt)
+- [3.2.5 有状态转换](asm_example/src/main/java/com/andoter/asm_example/part3/RemoveAddZeroAdapter.kt)
 
 #### 3.3 工具
 - 3.3.1 基本工具
@@ -74,4 +75,5 @@ ASM 4 教程中的示例代码
     - [7.1.2 生成方法](asm_example/src/main/java/com/andoter/asm_example/part7/MakeMethod.kt)
     - 7.1.3 无状态转换和有状态转换
         - [AddTimerTransformer](asm_example/src/main/java/com/andoter/asm_example/part7/AddTimerTransformer.kt)
+        - [RemoveGetFieldPutFieldTransformer]()
     

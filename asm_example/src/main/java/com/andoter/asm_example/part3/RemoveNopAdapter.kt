@@ -8,9 +8,6 @@ import org.objectweb.asm.*
  * 同样对于 MethodVisitor 也可以将收到的方法回调进行修改，比如改变参数、删除某次调用的指令、
  * 接收到的调用之间插入代码、增加新的指令等。
  */
-class TransformMethod {
-}
-
 class RemoveNopAdapter(api: Int, methodVisitor: MethodVisitor?) :
     MethodVisitor(api, methodVisitor) {
 
