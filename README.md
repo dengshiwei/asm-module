@@ -75,5 +75,6 @@ ASM 4 教程中的示例代码
     - [7.1.2 生成方法](asm_example/src/main/java/com/andoter/asm_example/part7/MakeMethod.kt)
     - 7.1.3 无状态转换和有状态转换
         - [AddTimerTransformer](asm_example/src/main/java/com/andoter/asm_example/part7/AddTimerTransformer.kt)
-        - [RemoveGetFieldPutFieldTransformer]()
+        - [RemoveGetFieldPutFieldTransformer](asm_example/src/main/java/com/andoter/asm_example/part7/RemoveGetFieldPutFieldTransformer.kt)
+        - [RemoveGetFieldPutFieldTransformer2](asm_example/src/main/java/com/andoter/asm_example/part7/RemoveGetFieldPutFieldTransformer2.kt)
     
