@@ -78,3 +78,5 @@ ASM 4 教程中的示例代码
         - [RemoveGetFieldPutFieldTransformer](asm_example/src/main/java/com/andoter/asm_example/part7/RemoveGetFieldPutFieldTransformer.kt)
         - [RemoveGetFieldPutFieldTransformer2](asm_example/src/main/java/com/andoter/asm_example/part7/RemoveGetFieldPutFieldTransformer2.kt)
     - 7.1.5 [全局转换](asm_example/src/main/java/com/andoter/asm_example/part7/OptimizeJumpTransformer.kt)
+- 7.2 组件与合成
+    - [7.2.2 模式](asm_example/src/main/java/com/andoter/asm_example/part7/MyAdapter.kt)
