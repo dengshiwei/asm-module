@@ -48,8 +48,8 @@ fun main() {
 }
 
 /*
-我们可以看到，基于树 API 的代码数量要多余核心 API 的情况，但是这两种方式之间的主要区别是，使用树 API 时不需要状态机。
-当有三个火多个连续的 ALOAD 0 指令时，不在成为问题。
+通过对上面的 getNext() 方法进行调整，现在是对迭代列表进行操作。当序列识别确认完毕后，迭代器会恰好
+在他后面的位置。所以不需要 while(i.next() != i4) 的循环遍历判断
  */
 class RemoveGetFieldPutFieldTransformer2 : MethodTransformer() {
     override fun transform(mn: MethodNode) {
@@ -58,16 +58,16 @@ class RemoveGetFieldPutFieldTransformer2 : MethodTransformer() {
         while (iterator.hasNext()) {
             var insnNode = iterator.next()
             if (isALOAD(insnNode)) {
-                var i2 = getNext(insnNode)
+                var i2 = getNext(iterator)
                 if (i2 != null && isALOAD(i2)) {
-                    var i3 = getNext(i2)
+                    var i3 = getNext(iterator)
                     while (i3 != null && isALOAD(i3)) {
                         insnNode = i2;
                         i2 = i3;
-                        i3 = getNext(insnNode);
+                        i3 = getNext(iterator);
                     }
                     if (i3 != null && i3.opcode == Opcodes.GETFIELD) {
-                        val i4 = getNext(i3)
+                        val i4 = getNext(iterator)
                         if (i4 != null && i4.opcode == Opcodes.PUTFIELD) {
                             if (sameField(i3, i4)) {
                                 insnList.remove(insnNode)
@@ -91,15 +91,14 @@ class RemoveGetFieldPutFieldTransformer2 : MethodTransformer() {
             return (iNode as FieldInsnNode).name == (jNode as FieldInsnNode).name
         }
 
-        private fun getNext(insnNode: AbstractInsnNode?): AbstractInsnNode? {
-            var newNode = insnNode
-            do {
-                newNode = newNode?.next
-                if (newNode != null && newNode !is LineNumberNode) {
-                    break
+        private fun getNext(iterator: Iterator<AbstractInsnNode>): AbstractInsnNode? {
+            while (iterator.hasNext()) {
+                val abstractInsnNode = iterator.next()
+                if(abstractInsnNode !is LineNumberNode) {
+                    return abstractInsnNode
                 }
-            } while (newNode != null)
-            return newNode
+            }
+            return null
         }
     }
 }
