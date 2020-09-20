@@ -80,3 +80,12 @@ ASM 4 教程中的示例代码
     - 7.1.5 [全局转换](asm_example/src/main/java/com/andoter/asm_example/part7/OptimizeJumpTransformer.kt)
 - 7.2 组件与合成
     - [7.2.2 模式](asm_example/src/main/java/com/andoter/asm_example/part7/MyAdapter.kt)
+    
+### [第 8 章](asm_example/src/main/java/com/andoter/asm_example/part8)
+- [8.1 介绍](asm_example/src/main/java/com/andoter/asm_example/part8/AnalyzerClass.kt)
+- 8.2 接口与组件
+    - [8.2.1 基本数据流分析](asm_example/src/main/java/com/andoter/asm_example/part8/RemoveDeadCode.kt)
+    - [8.2.2 基本数据流校验器](asm_example/src/main/java/com/andoter/asm_example/part8/BasicVerifierAdapter.kt)
+    - [8.2.3 简单数据流校验器](asm_example/src/main/java/com/andoter/asm_example/part8/RemoveUnusedCastTransformer.kt)
+        - [RemoveUnusedCastAdapter](asm_example/src/main/java/com/andoter/asm_example/part8/RemoveUnusedCastAdapter.kt)
+    - [8.2.4 自定义数据流分析](asm_example/src/main/java/com/andoter/asm_example/part8/BasicVerifierAdapter.kt)
