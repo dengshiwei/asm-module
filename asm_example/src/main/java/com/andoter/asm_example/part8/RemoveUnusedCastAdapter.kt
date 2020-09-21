@@ -4,7 +4,6 @@ import com.andoter.asm_example.utils.ADLog
 import com.andoter.asm_example.utils.ClassOutputUtil
 import org.objectweb.asm.*
 import org.objectweb.asm.commons.AnalyzerAdapter
-import org.objectweb.asm.tree.ClassNode
 
 class RemoveUnusedCastAdapter(
     owner: String,
@@ -17,7 +16,7 @@ class RemoveUnusedCastAdapter(
     private var analyzerAdapter: AnalyzerAdapter? = null
 
     init {
-        analyzerAdapter = AnalyzerAdapter(owner, access, name, desc, this)
+        analyzerAdapter = AnalyzerAdapter(owner, access, name, desc, methodVisitor)
     }
 
     override fun visitTypeInsn(opcode: Int, type: String?) {

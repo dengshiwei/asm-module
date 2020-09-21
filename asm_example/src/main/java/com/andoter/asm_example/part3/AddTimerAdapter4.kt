@@ -2,7 +2,6 @@ package com.andoter.asm_example.part3
 
 import com.andoter.asm_example.utils.ADLog
 import org.objectweb.asm.*
-import org.objectweb.asm.commons.AnalyzerAdapter
 import org.objectweb.asm.commons.LocalVariablesSorter
 import java.lang.reflect.Field
 

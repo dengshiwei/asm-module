@@ -1,8 +1,6 @@
 package com.andoter.asm_example.part2
 
 
-import com.andoter.asm_example.part2.ChangeVersionVisitor
-import com.andoter.asm_example.part2.ClassPrintVisitor
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassWriter
 import org.objectweb.asm.Opcodes
