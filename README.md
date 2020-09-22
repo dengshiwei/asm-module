@@ -89,3 +89,10 @@ ASM 4 教程中的示例代码
     - [8.2.3 简单数据流校验器](asm_example/src/main/java/com/andoter/asm_example/part8/RemoveUnusedCastTransformer.kt)
         - [RemoveUnusedCastAdapter](asm_example/src/main/java/com/andoter/asm_example/part8/RemoveUnusedCastAdapter.kt)
     - [8.2.4 自定义数据流分析](asm_example/src/main/java/com/andoter/asm_example/part8/IsNullInterpreter.kt)
+    - [8.2.5 控制流分析](asm_example/src/main/java/com/andoter/asm_example/part8/CyclomaticComplexity.kt)
+    
+### [第 9 章](asm_example/src/main/java/com/andoter/asm_example/part9)
+- [9.1 泛型](asm_example/src/main/java/com/andoter/asm_example/part9/SignatureVisitorAdapter.java)
+- [9.2 注解](asm_example/src/main/java/com/andoter/asm_example/part9/AnnotationNodeAdapter.kt)
+
+### [第 10 章](asm_example/src/main/java/com/andoter/asm_example/part10)
