@@ -1,0 +1,114 @@
+@startuml
+
+package org.objectweb.asm {
+    class AnnotationVisitor
+    class Attribute
+    class ByteVector
+    class ClassReader
+    class ClassVisitor
+    class ClassWriter
+    class FieldVisitor
+    class Handle
+    class Label
+    class MethodVisitor
+    class Type
+    interface Opcodes
+}
+
+package org.objectweb.asm.commons {
+    class AdviceAdapter
+    class AnalyzerAdapter
+    class CodeSizeEvaluator
+    class GeneratorAdapter
+    class InstrucationAdapter
+    class JSRInlinerAdapter
+    class LocalVariablesSorter
+    class Method
+    class Remapper
+    class RemappingAnnotationAdapter
+    class RemappingClassAdapter
+    class RemappingFieldAdapter
+    class RemappingMethodAdapter
+    class RemappingSignatureAdapter
+    class SerialVersionUIDAdder
+    class SimpleRemapper
+    class StaticInitMerger
+    class TryCatchBlockSorter
+    interface TableSwitchGenerator
+}
+
+package org.objectweb.asm.tree {
+    class AbstractInsnNode
+    class AnnotationNode
+    class ClassNode
+    class FieldInsnNode
+    class FieldNode
+    class FrameNode
+    class IincInsnNode
+    class InnerClassNode
+    class InsnList
+    class InsnNode
+    class IntInsnNode
+    class InvokeDynamicInsnNode
+    class JumpInsnNode
+    class LabelNode
+    class LdcInsnNode
+    class LineNumberNode
+    class LocalVariableAnnotationNode
+    class LocalVariableNode
+    class LookupSwitchInsnNode
+    class MethodInsnNode
+    class MethodNode
+    class ModuleExportNode
+    class ModuleNode
+    class ModuleOpenNode
+    class ModuleProvideNode
+    class ModuleRequireNode
+    class MultiANewArrayInsnNode
+    class ParameterNode
+    class RecordComponentNode
+    class TableSwitchInsnNode
+    class TryCatchBlockNode
+    class TypeAnnotationNode
+    class TypeInsnNode
+    class VarInsnNode
+}
+
+package org.objectweb.asm.tree.analysis {
+    class Analyzer<V extends Value>
+    class BasicInterpreter
+    class BasicValue
+    class BasicVerifier
+    class Frame<V extends Value>
+    class Interpreter<V extends Value>
+    class SimpleVerifier
+    class SourceInterpreter
+    class SourceValue
+}
+
+package org.objectweb.asm.signature {
+    class SignatureReader
+    class SignatureVisitor
+    class SignatureWriter
+}
+
+package org.objectweb.asm.util {
+    class ASMifier
+    class CheckAnnotationAdapter
+    class CheckClassAdapter
+    class CheckFieldAdapter
+    class CheckMethodAdapter
+    class CheckModuleAdapter
+    class CheckRecordComponentAdapter
+    class CheckSignatureAdapter
+    class Printer
+    class Textifier
+    class TraceAnnotationVisitor
+    class TraceClassVisitor
+    class TraceFieldVisitor
+    class TraceMethodVisitor
+    class TraceModuleVisitor
+    class TraceRecordComponentVisitor
+    class TraceSignatureVisitor
+}
+@enduml
