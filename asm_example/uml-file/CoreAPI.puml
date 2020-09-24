@@ -1,0 +1,105 @@
+@startuml
+
+abstract class ClassVisitor {
+ 	visit(int version, int access, String name, String signature, String superName, String[] interfaces)
+ 	visitAnnotation(String descriptor, boolean visible)
+ 	visitAttribute(Attribute attribute)
+ 	visitEnd()
+ 	visitField(int access, String name, String descriptor, String signature, Object value)
+ 	visitInnerClass(String name, String outerName, String innerName, int access)
+ 	visitMethod(int access, String name, String descriptor, String signature, String[] exceptions)
+ 	visitModule(String name, int access, String version)
+ 	visitNestHost(String nestHost)
+ 	visitNestMember(String nestMember)
+ 	visitOuterClass(String owner, String name, String descriptor)
+ 	visitPermittedSubclass(String permittedSubclass)
+ 	visitRecordComponent(String name, String descriptor, String signature)
+ 	visitSource(String source, String debug)
+ 	visitTypeAnnotation(int typeRef, TypePath typePath, String descriptor, boolean visible)
+}
+
+ClassVisitor <-- ClassWriter
+ClassVisitor <-- CheckClassAdapter
+ClassVisitor <-- ClassNode
+ClassVisitor <-- ClassRemapper
+ClassVisitor <-- SerialVersionUIDAdder
+ClassVisitor <-- StaticInitMerger
+ClassVisitor <-- TraceClassVisitor
+
+abstract class AnnotationVisitor {
+    visit(String name, Object value)
+    visitAnnotation(String name, String descriptor)
+    visitArray(String name)
+    visitEnd()
+    visitEnum(String name, String descriptor, String value)
+}
+
+AnnotationVisitor <-- AnnotationNode
+AnnotationVisitor <-- TraceAnnotationVisitor
+AnnotationVisitor <-- CheckAnnotationAdapter
+AnnotationVisitor <-- AnnotationRemapper
+
+
+class FiledVisitor {
+    visitAnnotation(String descriptor, boolean visible)
+    visitAttribute(Attribute attribute)
+    visitEnd()
+    visitTypeAnnotation(int typeRef, TypePath typePath, String descriptor, boolean visible)
+}
+
+FiledVisitor <-- CheckFieldAdapter
+FiledVisitor <-- FieldNode
+FiledVisitor <-- FieldRemapper
+FiledVisitor <-- TraceFieldVisitor
+
+class MethodVisitor {
+    visitAnnotableParameterCount(int parameterCount, boolean visible)
+    visitAnnotation(String descriptor, boolean visible)
+    visitAnnotationDefault()
+    visitAttribute(Attribute attribute)
+    visitCode()
+    visitEnd()
+    visitFieldInsn(int opcode, String owner, String name, String descriptor)
+    visitFrame(int type, int numLocal, Object[] local, int numStack, Object[] stack)
+    visitIincInsn(int var, int increment)
+    visitInsn(int opcode)
+    visitInsnAnnotation(int typeRef, TypePath typePath, String descriptor, boolean visible)
+    visitIntInsn(int opcode, int operand)
+    visitInvokeDynamicInsn(String name, String descriptor, Handle bootstrapMethodHandle, Object... bootstrapMethodArguments)
+    visitJumpInsn(int opcode, Label label)
+    visitLabel(Label label)
+    visitLdcInsn(Object value)
+    visitLineNumber(int line, Label start)
+    visitLocalVariable(String name, String descriptor, String signature, Label start, Label end, int index)
+    visitLocalVariableAnnotation(int typeRef, TypePath typePath, Label[] start, Label[] end, int[] index, String descriptor, boolean visible)
+    visitLookupSwitchInsn(Label dflt, int[] keys, Label[] labels)
+    visitMaxs(int maxStack, int maxLocals)
+    visitMethodInsn(int opcode, String owner, String name, String descriptor, boolean isInterface)
+    visitMultiANewArrayInsn(String descriptor, int numDimensions)
+    visitParameter(String name, int access)
+    visitParameterAnnotation(int parameter, String descriptor, boolean visible)
+    visitTableSwitchInsn(int min, int max, Label dflt, Label... labels)
+    visitTryCatchAnnotation(int typeRef, TypePath typePath, String descriptor, boolean visible)
+    visitTryCatchBlock(Label start, Label end, Label handler, String type)
+    visitTypeAnnotation(int typeRef, TypePath typePath, String descriptor, boolean visible)
+    visitTypeInsn(int opcode, java.lang.String type)
+    visitVarInsn(int opcode, int var)
+}
+
+MethodVisitor <-- AnalyzerAdapter
+MethodVisitor <-- CheckMethodAdapter
+MethodVisitor <-- TraceMethodVisitor
+MethodVisitor <-- MethodNode
+MethodVisitor <-- MethodRemapper
+MethodVisitor <-- LocalVariablesSorter
+MethodVisitor <-- InstructionAdapter
+MethodVisitor <-- CodeSizeEvaluator
+
+class Reader {
+    {static}int EXPAND_FRAMES
+    {static}int SKIP_CODE
+    {static}int SKIP_DEBUG
+    {static}int SKIP_FRAMES
+}
+
+@enduml
