@@ -11,6 +11,10 @@ ASM 4 教程中的示例代码
 - [2.2.4 转换类](asm_example/src/main/java/com/andoter/asm_example/part2/ConvertDemo.kt)
 - [2.2.5 移除类成员](asm_example/src/main/java/com/andoter/asm_example/part2/RemoveDebugDemo.kt)
 - [2.2.6 添加类成员](asm_example/src/main/java/com/andoter/asm_example/part2/AddFieldDemo.kt)
+- 额外补充
+    - [FieldVisitor](asm_example/src/main/java/com/andoter/asm_example/field/FieldVisitorDemo.kt)
+    - [CheckFieldInsn](asm_example/src/main/java/com/andoter/asm_example/field/CheckFieldInsn.kt)
+    - [TraceFieldInsn](asm_example/src/main/java/com/andoter/asm_example/field/TraceFieldInsn.kt)
 
 #### 2.3 工具
 - [2.3.1 Type](asm_example/src/main/java/com/andoter/asm_example/part2/TypeDemo.kt)
