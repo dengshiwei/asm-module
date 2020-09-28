@@ -4,6 +4,7 @@ package org.object.web.asm.tree {
    class AbstractInsnNode
    class AnnotationNode
    class ClassNode
+   class FieldNode
    class FieldInsnNode
    class FrameNode
    class IincInsnNode
@@ -33,5 +34,54 @@ package org.object.web.asm.tree {
    class TypeInsnNode
    class VarInsnNode
 }
+
+class ClassNode extends ClassVisitor {
+  public int version;
+  public int access;
+  public String name;
+  public String signature;
+  public String superName;
+  public List<String> interfaces;
+  public String sourceFile;
+  public String sourceDebug;
+  public String outerClass;
+  public String outerMethod;
+  public String outerMethodDesc;
+  public List<AnnotationNode> visibleAnnotations;
+  public List<AnnotationNode> invisibleAnnotations;
+  public List<Attribute> attrs;
+  public List<InnerClassNode> innerClasses;
+  public List<FieldNode> fields;
+  public List<MethodNode> methods;
+  public ClassNode();
+  public ClassNode(final int api)
+}
+class FieldNode extends FieldVisitor {
+	 public int access;
+	 public String name;
+	 public String desc;
+	 public String signature;
+	 public Object value;
+	 public FieldNode(int access, String name, String desc, String signature, Object value);
+}
+class MethodNode extends MethodVisitor {
+	 public int access;
+	 public String name;
+	 public String desc;
+	 public String signature;
+	 public List<String> exceptions;
+	 public List<AnnotationNode> visibleAnnotations;
+	 public List<AnnotationNode> invisibleAnnotations;
+	 public List<Attribute> attrs;
+	 public Object annotationDefault;
+	 public List<AnnotationNode>[] visibleParameterAnnotations;
+	 public List<AnnotationNode>[] invisibleParameterAnnotations;
+	 public InsnList instructions;
+	 public List<TryCatchBlockNode> tryCatchBlocks;
+	 public List<LocalVariableNode> localVariables;
+	 public int maxStack;
+	 public int maxLocals;
+}
+
 
 @enduml
