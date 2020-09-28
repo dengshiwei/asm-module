@@ -1,0 +1,29 @@
+@startuml
+
+class SignatureReader {
+    + accept(SignatureVisitor signatureVistor)
+    + acceptType(SignatureVisitor signatureVisitor)
+}
+
+Abstract class SignatureVisitor {
+    + visitArrayType()
+    + visitBaseType(char descriptor)
+    + visitClassBound()
+    + visitClassType(java.lang.String name)
+    + visitExceptionType()
+    + visitInnerClassType(java.lang.String name)
+    + visitInterface()
+    + visitInterfaceBound()
+    + visitParameterType()
+    + visitReturnType()
+    + visitSuperclass()
+    + visitTypeArgument()
+    + visitEnd()
+}
+
+SignatureVisitor<-- CheckSignatureAdapter
+SignatureVisitor<-- SignatureRemapper
+SignatureVisitor<-- SignatureWriter
+SignatureVisitor<-- TraceSignatureVisitor
+
+@enduml

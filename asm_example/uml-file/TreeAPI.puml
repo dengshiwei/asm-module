@@ -1,0 +1,37 @@
+@startuml
+
+package org.object.web.asm.tree {
+   class AbstractInsnNode
+   class AnnotationNode
+   class ClassNode
+   class FieldInsnNode
+   class FrameNode
+   class IincInsnNode
+   class InnerClassNode
+   class InsnList
+   class InsnNode
+   class InvokeDynamicInsnNode
+   class JumpInsnNode
+   class LabelNode
+   class LdcInsnNode
+   class LineNumberNode
+   class LocalVariableAnnotationNode
+   class LocalVariableNode
+   class LookupSwitchInsnNode
+   class MethodInsnNode
+   class MethodNode
+   class ModuleExportNode
+   class ModuleNode
+   class ModuleOpenNode
+   class ModuleProvideNode
+   class ModuleRequireNode
+   class MultiANewArrayInsnNode
+   class RecordComponentNode
+   class TableSwitchInsnNode
+   class TryCatchBlockNode
+   class TypeAnnotationNode
+   class TypeInsnNode
+   class VarInsnNode
+}
+
+@enduml
