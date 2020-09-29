@@ -13,7 +13,7 @@ import org.objectweb.asm.tree.analysis.BasicValue
 /*
 在 ASM 的 API 中，org.objectweb.asm.tree.analysis 包中提供了用于分析代码的类，它是基于树 API 的一个进行正向数据流分析的框架。
 为了能够以准确度不一的取值进行各种数据流分析，数据流分析算法分为两部分：一种是固
-定的，由框架ᨀ供，另一种是变化的，由用户ᨀ供。更准确地说：
+定的，由框架提供，另一种是变化的，由用户提供。更准确地说：
 - 整体数据流分析算法、将适当数量的值从栈中弹出和压回栈中的任务仅实现一次，用于 Analyzer 和 Frame 类中的所有内容。
 - 合并值的任何和计算值集并集的任务由用户定义的 Interpreter 和 Value 抽象类的子类提供。
 尽管框架的主要目的是执行数据流分析，但 Analyzer 类也可构造所分析方法的控制流图。为此，可以重写这个类的newControlFlowEdge和newControlFlowExceptionEdge方法，
