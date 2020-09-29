@@ -1,0 +1,21 @@
+@startuml
+
+package org.object.web.asm.tree.analysis {
+    class Analyzer<V extends Value>
+    class BasicInterpreter
+    class BasicValue
+    class BasicVerifier
+    class Frame<V extends Value>
+    class Interpreter<V extends Value>
+    class SimpleVerifier
+    class SourceInterpreter
+    class SourceValue
+    interface Value
+
+    Value <|-- BasicValue
+    Interpreter <|-- BasicInterpreter
+    BasicInterpreter <-- BasicVerifier
+    BasicVerifier <-- SimpleVerifier
+}
+
+@enduml
