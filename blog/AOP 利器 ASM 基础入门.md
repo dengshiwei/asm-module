@@ -24,7 +24,7 @@
 
 我们将 `ASM` 按照包名路径划分，大致的类图框架如下。
 
-![UML](./package_classes.png)
+![UML](package_classes.png)
 
 从中可以看到大致有：
 
@@ -63,13 +63,13 @@
 
 在 `ASM` 的核心 `API` 中，按照对 `class` 文件处理的划分有：类处理（`ClassVisitor`、`ClassReader`）、注解处理（`AnnotationVisitor`）、方法处理（`MethodVisitor`）和字段处理（`FiledVisitor`）。
 
-![CoreAPI](./CoreAPI.png)
+![CoreAPI](CoreAPI.png)
 
 #### 2.1 ClassVisitor
 
 用于访问 `Java` 类文件。
 
-![ClassVisitor](./ClassVisitor.png)
+![ClassVisitor](ClassVisitor.png)
 
 在访问一个类文件时，它的回调方法必须按照以下顺序访问：`visit` 【 `visitSource` 】【 `visitModule` 】【 `visitNestHost` 】【 `visitPermittedclass` 】【 `visitOuterClass` 】 ( `visitAnnotation` | `visitTypeAnnotation` | `visitAttribute` )* ( `visitNestMember` | `visitInnerClass` | `visitRecordComponent` | `visitField` | `visitMethod` )* `visitEnd`。
 
@@ -246,7 +246,7 @@ fun main() {
 
 用于对方法的处理，比如访问一个方法，或者生成方法。
 
-![MethodVisitor](./MethodVisitor.png)
+![MethodVisitor](MethodVisitor.png)
 
 在访问方法时，会按照以下顺序进行处理：`( visitParameter )* 【 visitAnnotationDefault 】 ( visitAnnotation | visitAnnotableParameterCount | visitParameterAnnotation visitTypeAnnotation | visitAttribute )* 【 visitCode ( visitFrame | visit<i>X</i>Insn | visitLabel | visitInsnAnnotation | visitTryCatchBlock | visitTryCatchAnnotation | visitLocalVariable | visitLocalVariableAnnotation | visitLineNumber )* visitMaxs 】 visitEnd`。
 
@@ -499,7 +499,7 @@ class AddTimerMethodAdapter6(
 
 用于 `Field` 字段的详细信息访问，比如字段上的注解。
 
-![FieldVisitor](./FieldVisitor.png)
+![FieldVisitor](FieldVisitor.png)
 
 访问时按照以下顺序执行：` ( visitAnnotation | visitTypeAnnotation | visitAttribute )* visitEnd`。
 
@@ -647,7 +647,7 @@ override fun visitEnd() {
 
 用于访问注解。
 
-![AnnotationVisitor](./AnnotationVisitor.png)
+![AnnotationVisitor](AnnotationVisitor.png)
 
 调用顺序如下：` ( visit | visitEnum | visitAnnotation | visitArray )* visitEnd`
 
@@ -712,7 +712,7 @@ class AnnotationPrinterVisitor(annotationVisitor: AnnotationVisitor) : Annotatio
 
 用于泛型的类型签名处理。
 
-![SignatureVisitor](./SignatureVisitor.png)
+![SignatureVisitor](SignatureVisitor.png)
 
 该类用于处理 `Method`、`Class` 和 `Type` 的签名处理。
 
@@ -726,7 +726,7 @@ class AnnotationPrinterVisitor(annotationVisitor: AnnotationVisitor) : Annotatio
 
 在树 `API` 中，类用一个对象树表示，比如一个类用 `ClassNode` 对象表示，一个方法用 `MethodNode` 对象表示。它通过将每个节点都通过一个 `Node` 对象的表示方式，所以在树 `API` 包下涉及到很多类。另外一点需要我们注意，在树 `API` 中的很多类都是继承核心 `API` 的类进行实现的，比如 `ClassNode` 是继承 `ClassVisitor`，`MethodNode` 是继承 `MethodVisitor` 实现。所以通过树 `API` 可以转换为等价的事件序列。
 
-![TreeAPI](./TreeAPI.png)
+![TreeAPI](TreeAPI.png)
 
 这其中包含很多 `XXXInsnNode` 的指令操作节点，它们都是 `AbstractInsnNode` 的子类。同时在树 `API` 中使用 `InsnList` 对象表示一个指令的集合，**一个 AbstractInsnNode 指令对象只能出现在一个 InsnList 当中。**
 
@@ -734,7 +734,7 @@ class AnnotationPrinterVisitor(annotationVisitor: AnnotationVisitor) : Annotatio
 
 用于生成和表示一个类对象，继承 `ClassVisitor` 进行实现。
 
-![ClassNode](./ClassNode.png)
+![ClassNode](ClassNode.png)
 
 从它的基本结构中可以看出，这个类的字段都分别对应着一个类的结构。比如 `name` 表示名称，`signature` 表示类型签名，`fields` 表示类的组成字段，`methods` 表示类的组成方法。
 
@@ -805,7 +805,7 @@ fun main() {
 
 用于生成和表示类的字段，继承 `FieldVisitor` 进行实现。
 
-![FieldNode](./FieldNode.png)
+![FieldNode](FieldNode.png)
 
 示例代码可以参照 `ClassNode` 中展示的代码。
 
@@ -837,7 +837,7 @@ classReader.accept(classNode, FLAG)
 
 用于生成和表示类的方法。
 
-![MethodNode](./MethodNode.png)
+![MethodNode](MethodNode.png)
 
 我们重点介绍 `InsnList instructions` 字段。`InsnList` 是一个由指令组成的双向链表，它们的链接存储在 `AbstractInsnNode` 对象中。`AbstractInsnNode` 类是表示字节代码指令的类的超类。它的子类是 `Xxx InsnNode` 类，对应于 `MethodVisitor` 接口的 `visitXxx Insn` 方法，例如，`VarInsnNode` 类对应于 `visitVarInsn` 方法。
 所以对于一个 `AbstractInsnNode` 对象来说，具有以下特征：
@@ -927,7 +927,7 @@ fun main() {
 
 基本类图
 
-![AnalysisAPI](./AnalysisAPI.png)
+![AnalysisAPI](AnalysisAPI.png)
 
 - `Analyzer`：分析主类；
 - `BasicInterpreter`：基本的数据流分析器，主要是作为一个空实现，用于构建 `Analyzer` 对象；
