@@ -264,7 +264,7 @@ fun main() {
 - `visitJumpInsn(int opcode, Label label)`：访问一个 `Jump` 指令；
 - `visitLdcInsn(Object value)`：访问一个 `LDC` 常量，并加载到操作数栈；
 - `visitMethodInsn(int opcode, String owner, String name, String descriptor, boolean isInterface)`：访问方法时的指令，即调用方法的指令，比如在一个方法中调用另一个方法；
-- `visitVarInsn(int opcode, int var)`：访问局部变量指令，局部变量指令是加载或存储局部变量值的指令；
+- `visitVarInsn(int opcode, int var)`：访问局部变量指令，局部变量指令是加载或存储局部变量值的指令，opcode 取值为 GETSTATIC, PUTSTATIC, GETFIELD 或 PUTFIELD，即访问的字段只能是实例字段或静态字段，对于 static final 类型的无法访问；
 - `visitLineNumber(int line, Label start)`：访问方法行号声明；
 - `visitTryCatchBlock`：访问 `try..catch` 块；
 - `visitInsn(int opcode)`：访问一个字节码指令，比如 `IADD`、`ISUB`、`F2L`、`LSHR` 等；
