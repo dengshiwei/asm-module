@@ -2,6 +2,7 @@
 本工程中主要是针对 ASM 4 教程中的示例代码整合而来，将每个示例代码片段整合成可运行的 `Java` 运行程序，方便初学者学习使用。
 - 基础入门介绍文章[AOP 利器 ASM 基础入门](doc/blog/AOP%20利器%20ASM%20基础入门.md)
 - ASM 开发指南中文译文：[ASM 6 开发者指南](doc/ASM6%20开发者指南/ASM%206%20开发者指南.md)
+- 个人总结的额外案例：[asm-example](https://github.com/dengshiwei/asm-example)
 
 ## 章节目录
 
